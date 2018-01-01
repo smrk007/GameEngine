@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #include "common.h"
+#include "Object.hpp"
 #include "Util.hpp"
 
 class NGon
@@ -34,7 +35,7 @@ public:
     std::size_t getIndxByteSize() const { return sizeof(GLushort) * indxSize; }
     GLfloat* getVertDataPointer() { return verts; }
     GLushort* getIndxDataPointer() { return indices; }
-    GLushort getIndxCount() { return N + 1; } // Specifically Applicable for NGons
+    GLushort getIndxCount() { return vertSize / 7; } // TODO: Find a way to generalize the Magic Number 7 (datapoints per vertex)
     
     // Mutators
     void setColor(Color newColor) { color = newColor; }

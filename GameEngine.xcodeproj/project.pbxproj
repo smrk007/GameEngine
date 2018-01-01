@@ -18,6 +18,7 @@
 		112F68031FEAFCC800D51E07 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F68021FEAFCC500D51E07 /* CoreVideo.framework */; };
 		112F68051FEAFCE400D51E07 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F68041FEAFCE100D51E07 /* IOKit.framework */; };
 		112F68081FEB002A00D51E07 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112F68061FEB002A00D51E07 /* Window.cpp */; };
+		11B8A93E1FFAB91200998582 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B8A93C1FFAB91200998582 /* Object.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,8 @@
 		112F68041FEAFCE100D51E07 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		112F68061FEB002A00D51E07 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
 		112F68071FEB002A00D51E07 /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		11B8A93C1FFAB91200998582 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		11B8A93D1FFAB91200998582 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		11DCB56E1FFAA875006A4858 /* SimpleFragmentShader.fragmentshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragmentShader.fragmentshader; sourceTree = "<group>"; };
 		11DCB56F1FFAA875006A4858 /* SimpleVertexShader.vertexshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertexShader.vertexshader; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				112F67F21FEAFC4F00D51E07 /* main.cpp */,
+				11B8A93C1FFAB91200998582 /* Object.cpp */,
+				11B8A93D1FFAB91200998582 /* Object.hpp */,
 				110B9B6C1FFA9CAF006EAE8D /* Engine.hpp */,
 				110B9B6B1FFA9CAF006EAE8D /* Engine.cpp */,
 				110B9B651FF807FD006EAE8D /* Shapes.hpp */,
@@ -179,6 +184,7 @@
 			files = (
 				110B9B661FF807FD006EAE8D /* Shapes.cpp in Sources */,
 				112F68081FEB002A00D51E07 /* Window.cpp in Sources */,
+				11B8A93E1FFAB91200998582 /* Object.cpp in Sources */,
 				112F67F31FEAFC4F00D51E07 /* main.cpp in Sources */,
 				110B9B6A1FF989B4006EAE8D /* Util.cpp in Sources */,
 				110B9B6D1FFA9CAF006EAE8D /* Engine.cpp in Sources */,
