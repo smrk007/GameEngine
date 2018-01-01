@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110B9B661FF807FD006EAE8D /* Shapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 110B9B641FF807FD006EAE8D /* Shapes.cpp */; };
+		110B9B6A1FF989B4006EAE8D /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 110B9B681FF989B4006EAE8D /* Util.cpp */; };
+		110B9B6D1FFA9CAF006EAE8D /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 110B9B6B1FFA9CAF006EAE8D /* Engine.cpp */; };
 		112F67F31FEAFC4F00D51E07 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112F67F21FEAFC4F00D51E07 /* main.cpp */; };
+		112F67FB1FEAFC6C00D51E07 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F67FA1FEAFC5E00D51E07 /* OpenGL.framework */; };
+		112F67FD1FEAFC8400D51E07 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F67FC1FEAFC8400D51E07 /* libGLEW.2.1.0.dylib */; };
+		112F67FF1FEAFCA500D51E07 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F67FE1FEAFCA500D51E07 /* libglfw3.a */; };
+		112F68011FEAFCB900D51E07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F68001FEAFCAF00D51E07 /* Cocoa.framework */; };
+		112F68031FEAFCC800D51E07 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F68021FEAFCC500D51E07 /* CoreVideo.framework */; };
+		112F68051FEAFCE400D51E07 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F68041FEAFCE100D51E07 /* IOKit.framework */; };
+		112F68081FEB002A00D51E07 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112F68061FEB002A00D51E07 /* Window.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +33,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		112F67EF1FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JK_OpenGL_Tutorial; sourceTree = BUILT_PRODUCTS_DIR; };
+		110B9B641FF807FD006EAE8D /* Shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shapes.cpp; sourceTree = "<group>"; };
+		110B9B651FF807FD006EAE8D /* Shapes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shapes.hpp; sourceTree = "<group>"; };
+		110B9B671FF80858006EAE8D /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		110B9B681FF989B4006EAE8D /* Util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		110B9B691FF989B4006EAE8D /* Util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Util.hpp; sourceTree = "<group>"; };
+		110B9B6B1FFA9CAF006EAE8D /* Engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
+		110B9B6C1FFA9CAF006EAE8D /* Engine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Engine.hpp; sourceTree = "<group>"; };
+		112F67EF1FEAFC4E00D51E07 /* GameEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		112F67F21FEAFC4F00D51E07 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		112F67FA1FEAFC5E00D51E07 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		112F67FC1FEAFC8400D51E07 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		112F67FE1FEAFCA500D51E07 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
+		112F68001FEAFCAF00D51E07 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		112F68021FEAFCC500D51E07 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		112F68041FEAFCE100D51E07 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		112F68061FEB002A00D51E07 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		112F68071FEB002A00D51E07 /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		11DCB56E1FFAA875006A4858 /* SimpleFragmentShader.fragmentshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragmentShader.fragmentshader; sourceTree = "<group>"; };
+		11DCB56F1FFAA875006A4858 /* SimpleVertexShader.vertexshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertexShader.vertexshader; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +59,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112F68051FEAFCE400D51E07 /* IOKit.framework in Frameworks */,
+				112F68031FEAFCC800D51E07 /* CoreVideo.framework in Frameworks */,
+				112F68011FEAFCB900D51E07 /* Cocoa.framework in Frameworks */,
+				112F67FF1FEAFCA500D51E07 /* libglfw3.a in Frameworks */,
+				112F67FD1FEAFC8400D51E07 /* libGLEW.2.1.0.dylib in Frameworks */,
+				112F67FB1FEAFC6C00D51E07 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,33 +74,58 @@
 		112F67E61FEAFC4E00D51E07 = {
 			isa = PBXGroup;
 			children = (
-				112F67F11FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */,
+				112F67F11FEAFC4E00D51E07 /* GameEngine */,
 				112F67F01FEAFC4E00D51E07 /* Products */,
+				112F67F91FEAFC5E00D51E07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		112F67F01FEAFC4E00D51E07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				112F67EF1FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */,
+				112F67EF1FEAFC4E00D51E07 /* GameEngine */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		112F67F11FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */ = {
+		112F67F11FEAFC4E00D51E07 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
 				112F67F21FEAFC4F00D51E07 /* main.cpp */,
+				110B9B6C1FFA9CAF006EAE8D /* Engine.hpp */,
+				110B9B6B1FFA9CAF006EAE8D /* Engine.cpp */,
+				110B9B651FF807FD006EAE8D /* Shapes.hpp */,
+				110B9B641FF807FD006EAE8D /* Shapes.cpp */,
+				110B9B671FF80858006EAE8D /* common.h */,
+				112F68071FEB002A00D51E07 /* Window.hpp */,
+				112F68061FEB002A00D51E07 /* Window.cpp */,
+				11DCB56F1FFAA875006A4858 /* SimpleVertexShader.vertexshader */,
+				11DCB56E1FFAA875006A4858 /* SimpleFragmentShader.fragmentshader */,
+				110B9B691FF989B4006EAE8D /* Util.hpp */,
+				110B9B681FF989B4006EAE8D /* Util.cpp */,
 			);
-			path = JK_OpenGL_Tutorial;
+			path = GameEngine;
+			sourceTree = "<group>";
+		};
+		112F67F91FEAFC5E00D51E07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				112F68041FEAFCE100D51E07 /* IOKit.framework */,
+				112F68021FEAFCC500D51E07 /* CoreVideo.framework */,
+				112F68001FEAFCAF00D51E07 /* Cocoa.framework */,
+				112F67FE1FEAFCA500D51E07 /* libglfw3.a */,
+				112F67FC1FEAFC8400D51E07 /* libGLEW.2.1.0.dylib */,
+				112F67FA1FEAFC5E00D51E07 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		112F67EE1FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */ = {
+		112F67EE1FEAFC4E00D51E07 /* GameEngine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 112F67F61FEAFC4F00D51E07 /* Build configuration list for PBXNativeTarget "JK_OpenGL_Tutorial" */;
+			buildConfigurationList = 112F67F61FEAFC4F00D51E07 /* Build configuration list for PBXNativeTarget "GameEngine" */;
 			buildPhases = (
 				112F67EB1FEAFC4E00D51E07 /* Sources */,
 				112F67EC1FEAFC4E00D51E07 /* Frameworks */,
@@ -77,9 +135,9 @@
 			);
 			dependencies = (
 			);
-			name = JK_OpenGL_Tutorial;
+			name = GameEngine;
 			productName = JK_OpenGL_Tutorial;
-			productReference = 112F67EF1FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */;
+			productReference = 112F67EF1FEAFC4E00D51E07 /* GameEngine */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 112F67EA1FEAFC4E00D51E07 /* Build configuration list for PBXProject "JK_OpenGL_Tutorial" */;
+			buildConfigurationList = 112F67EA1FEAFC4E00D51E07 /* Build configuration list for PBXProject "GameEngine" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				112F67EE1FEAFC4E00D51E07 /* JK_OpenGL_Tutorial */,
+				112F67EE1FEAFC4E00D51E07 /* GameEngine */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110B9B661FF807FD006EAE8D /* Shapes.cpp in Sources */,
+				112F68081FEB002A00D51E07 /* Window.cpp in Sources */,
 				112F67F31FEAFC4F00D51E07 /* main.cpp in Sources */,
+				110B9B6A1FF989B4006EAE8D /* Util.cpp in Sources */,
+				110B9B6D1FFA9CAF006EAE8D /* Engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +295,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -241,6 +309,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -248,7 +322,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		112F67EA1FEAFC4E00D51E07 /* Build configuration list for PBXProject "JK_OpenGL_Tutorial" */ = {
+		112F67EA1FEAFC4E00D51E07 /* Build configuration list for PBXProject "GameEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112F67F41FEAFC4F00D51E07 /* Debug */,
@@ -257,7 +331,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		112F67F61FEAFC4F00D51E07 /* Build configuration list for PBXNativeTarget "JK_OpenGL_Tutorial" */ = {
+		112F67F61FEAFC4F00D51E07 /* Build configuration list for PBXNativeTarget "GameEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112F67F71FEAFC4F00D51E07 /* Debug */,

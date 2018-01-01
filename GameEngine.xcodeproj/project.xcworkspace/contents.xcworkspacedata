@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:JK_OpenGL_Tutorial.xcodeproj">
+      location = "self:/Users/alexander/Desktop/GameEngine/GameEngine.xcodeproj">
    </FileRef>
 </Workspace>
