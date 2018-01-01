@@ -1,26 +1,29 @@
 #include "Window.hpp"
 
 #include <iostream>
+
+#include "Engine.hpp"
 #include "Util.hpp"
 
 int main() {
     
-    Window window;
+    /*
+     TASKS
+     
+     TODO: Create an Object Class
+     TODO: Create an Update System
+     TODO: Add dt to the main loop
+     
+    */
     
-    std::vector<NGon> objects;
-    objects.push_back(NGon(3,0.3,Vec(0.5,0.2,0)));
-    objects.push_back(NGon(4,0.5,Vec(-0.2,-0.1,0)));
+    Engine world;
+    world.addObject(NGon(3,0.3,Vec(0.5,0.2,0)));
+    world.addObject(NGon(4,0.5,Vec(-0.2,-0.1,0)));
     
     do {
-        window.clear();
-        
-        for (NGon object : objects) {
-            window.draw(object);
-        }
-        
-        window.display();
+        world.draw();
     }
-    while(window.isOpen());
+    while (world.isRunning());
 
     return 0;
 }
