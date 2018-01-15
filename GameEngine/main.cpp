@@ -17,11 +17,11 @@ int main() {
     */
     
     Engine world;
-    world.addObject(NGon(3,0.3,Vec(0.5,0.2,0)));
-    world.addObject(NGon(4,0.5,Vec(-0.2,-0.1,0)));
-    
+    world.addObject(NGon(20,0.1,Vec(0.5,0.2,0)));
+
     do {
         world.draw();
+        world.update(1);
     }
     while (world.isRunning());
 

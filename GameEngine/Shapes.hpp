@@ -7,47 +7,23 @@
 #include "Object.hpp"
 #include "Util.hpp"
 
-class NGon
+class NGon : public Object
 {
-private:
-    // Characteristics
-    GLuint N;
-    GLdouble radius;
-    Vec pos;
-    Color color = Color(1,1,1,1);
-    
-    // Info for OpenGL
-    GLushort offset;
-    GLuint vertSize;
-    GLfloat* verts;
-    GLuint indxSize;
-    GLushort* indices;
 public:
     NGon(GLuint newN, GLdouble newRadius, Vec newPos)
     {
         N = newN;
         radius = newRadius;
         pos = newPos;
+        vel = Vec(0.1,0,0);
     }
     
-    // Accessors
-    std::size_t getVertByteSize() const { return sizeof(GLfloat) * vertSize; }
-    std::size_t getIndxByteSize() const { return sizeof(GLushort) * indxSize; }
-    GLfloat* getVertDataPointer() { return verts; }
-    GLushort* getIndxDataPointer() { return indices; }
-    GLushort getIndxCount() { return vertSize / 7; } // TODO: Find a way to generalize the Magic Number 7 (datapoints per vertex)
-    
-    // Mutators
-    void setColor(Color newColor) { color = newColor; }
-    void setOffset(GLushort newOffset) { offset = newOffset; }
-    void setPos(Vec newPos) { pos = newPos; }
-    void setRadius(GLdouble newRadius) { radius = newRadius; }
-    void setSideCount(GLuint newN) { N = newN; }
+    void update(GLdouble dt);
     
     // Initialization Functions
-    void generate();
-    void generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Vec pos);
-    void generateNIndices(GLushort indices[], GLuint N, GLuint offset);
+    void generate() override;
+    void generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Vec pos) override;
+    void generateNIndices(GLushort indices[], GLuint N, GLuint offset) override;
 };
 
 #endif /* Shapes_hpp */

@@ -26,6 +26,7 @@ public:
     
     // Simulation
     void addObject(NGon object) { objects.push_back(object); }
+    void update(GLdouble dt);
     
     // Graphics
     void draw();

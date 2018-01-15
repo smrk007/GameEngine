@@ -12,3 +12,11 @@ void Engine::draw()
     
     window.display();
 }
+
+void Engine::update(GLdouble dt)
+{
+    for (NGon object : objects)
+    {
+        object.setPos(Vec(0,0,0));
+    }
+}

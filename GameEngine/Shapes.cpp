@@ -59,3 +59,8 @@ void NGon::generateNIndices(GLushort indices[], GLuint N, GLuint offset)
     }
 }
 
+void NGon::update(GLdouble dt)
+{
+    setPos(pos.add(vel));
+}
+

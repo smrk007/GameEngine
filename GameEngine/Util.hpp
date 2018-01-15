@@ -48,6 +48,8 @@ public:
         y = Y;
         z = Z;
     }
+    
+    Vec add(Vec v) { return Vec(x + v.x, y + v.y, z + v.z); }
 };
 
 #endif /* Util_hpp */
