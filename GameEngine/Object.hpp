@@ -21,6 +21,9 @@ struct Object
     GLdouble radius;
     Vec pos;
     Vec vel;
+    GLFWwindow* targetWindow;
+    
+    void setTargetWindow(GLFWwindow* window) { targetWindow = window; }
     
     // Physics ///////////////////////////////////////
     void update(GLdouble dt);
@@ -32,9 +35,9 @@ struct Object
     // Info for OpenGL
     GLushort offset;
     GLuint vertSize;
-    GLfloat* verts;
+    GLfloat* verts = nullptr;
     GLuint indxSize;
-    GLushort* indices;
+    GLushort* indices = nullptr;
     // Accessor Functions
     std::size_t getVertByteSize() const { return sizeof(GLfloat) * vertSize; }
     std::size_t getIndxByteSize() const { return sizeof(GLushort) * indxSize; }
@@ -44,16 +47,14 @@ struct Object
     // Mutator Functions
     void setColor(Color newColor) { color = newColor; }
     void setOffset(GLushort newOffset) { offset = newOffset; }
-    void setPos(Vec newPos) {
-        pos = newPos;
-        
-    }
+    void setPos(Vec newPos) { pos = newPos; }
     void setRadius(GLdouble newRadius) { radius = newRadius; }
     void setSideCount(GLuint newN) { N = newN; }
     // Model Generation Functions
     virtual void generate() = 0;
     virtual void generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Vec pos) = 0;
     virtual void generateNIndices(GLushort indices[], GLuint N, GLuint offset) = 0;
+    void clearData();
     //////////////////////////////////////////////////
 };
 

@@ -10,7 +10,7 @@ class Engine
 {
 private:
     Window window;
-    std::vector<NGon> objects; // TODO: Create an Object class
+    std::vector<NGon*> objects; // TODO: Create an Object class
 public:
     Engine()
     {
@@ -18,14 +18,18 @@ public:
     }
     ~Engine()
     {
-        
+        for (Object* object : objects)
+        {
+            delete object;
+        }
+        objects.clear();
     }
     
     // Accessors
     bool isRunning() { return window.isOpen(); } // TODO: Think of different ways of how the engine could close
     
     // Simulation
-    void addObject(NGon object) { objects.push_back(object); }
+    void addObject(NGon* object);
     void update(GLdouble dt);
     
     // Graphics

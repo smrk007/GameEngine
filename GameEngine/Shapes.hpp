@@ -15,15 +15,16 @@ public:
         N = newN;
         radius = newRadius;
         pos = newPos;
-        vel = Vec(0.1,0,0);
+        vel = Vec(0,0,0);
     }
     
     void update(GLdouble dt);
+    void factorControls();
     
     // Initialization Functions
     void generate() override;
-    void generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Vec pos) override;
-    void generateNIndices(GLushort indices[], GLuint N, GLuint offset) override;
+    void generateNVerts(GLfloat* verts, Color color, GLuint N, GLdouble r, Vec pos) override;
+    void generateNIndices(GLushort* indices, GLuint N, GLuint offset) override;
 };
 
 #endif /* Shapes_hpp */

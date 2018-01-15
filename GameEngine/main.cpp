@@ -17,7 +17,7 @@ int main() {
     */
     
     Engine world;
-    world.addObject(NGon(20,0.1,Vec(0.5,0.2,0)));
+    world.addObject(new NGon(20,0.1,Vec(0.5,0.2,0)));
 
     do {
         world.draw();

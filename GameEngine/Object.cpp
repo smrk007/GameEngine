@@ -16,3 +16,9 @@ void Object::update(GLdouble dt)
     setPos(newPos);
     
 }
+
+void Object::clearData()
+{
+    delete verts;
+    delete indices;
+}

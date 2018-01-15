@@ -5,6 +5,7 @@ void NGon::generate()
     // Declare the Vertex and Indice arrays
     vertSize = (N + 1) * 7;
     indxSize = N * 3;
+    
     verts = new GLfloat[vertSize];
     indices = new GLushort[indxSize];
     
@@ -13,7 +14,7 @@ void NGon::generate()
     generateNIndices(indices, N, offset);
 }
 
-void NGon::generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Vec pos)
+void NGon::generateNVerts(GLfloat* verts, Color color, GLuint N, GLdouble r, Vec pos)
 {
     /*
      Generates an array for the GL_ARRAY_BUFFER binding point
@@ -44,7 +45,7 @@ void NGon::generateNVerts(GLfloat verts[], Color color, GLuint N, GLdouble r, Ve
     }
 }
 
-void NGon::generateNIndices(GLushort indices[], GLuint N, GLuint offset)
+void NGon::generateNIndices(GLushort* indices, GLuint N, GLuint offset)
 {
     /*
      Generates the element array for the GL_ELEMENT_ARRAY binding point
@@ -61,6 +62,32 @@ void NGon::generateNIndices(GLushort indices[], GLuint N, GLuint offset)
 
 void NGon::update(GLdouble dt)
 {
+    factorControls();
+    
     setPos(pos.add(vel));
+}
+
+void NGon::factorControls()
+{
+    if (glfwGetKey(targetWindow, GLFW_KEY_UP) == GLFW_PRESS)
+    {
+        vel = Vec(0,0.003,0);
+    }
+    else if (glfwGetKey(targetWindow, GLFW_KEY_DOWN) == GLFW_PRESS)
+    {
+        vel = Vec(0,-0.003,0);
+    }
+    else if (glfwGetKey(targetWindow, GLFW_KEY_LEFT) == GLFW_PRESS)
+    {
+        vel = Vec(-0.003,0,0);
+    }
+    else if (glfwGetKey(targetWindow, GLFW_KEY_RIGHT) == GLFW_PRESS)
+    {
+        vel = Vec(0.003,0,0);
+    }
+    else
+    {
+        vel = Vec(0,0,0);
+    }
 }
 

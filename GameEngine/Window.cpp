@@ -7,18 +7,13 @@ void Window::display()
     */
     
     // General //////////
-    GLuint vertexBufferID;
-    glGenBuffers(1, &vertexBufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
     glBufferData(GL_ARRAY_BUFFER, totalVertSize, NULL, GL_STATIC_DRAW);
-    GLuint indexBufferID;
-    glGenBuffers(1, &indexBufferID);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, totalIndxSize, NULL, GL_STATIC_DRAW);
     
     // Binding Individual Objects
     std::size_t vertIt = 0;
     std::size_t indxIt = 0;
+    
     for (NGon* object : objects)
     {
         glBufferSubData(GL_ARRAY_BUFFER, vertIt, object->getVertByteSize(), object->getVertDataPointer());
@@ -27,7 +22,7 @@ void Window::display()
         glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, indxIt, object->getIndxByteSize(), object->getIndxDataPointer());
         indxIt += object->getIndxByteSize();
     }
-    
+     
     glUseProgram(programID);
     
     glEnableVertexAttribArray(0);
@@ -44,19 +39,19 @@ void Window::display()
     glfwPollEvents();
 }
 
-void Window::draw(NGon shape)
+void Window::draw(NGon* object)
 {
     /*
-     Provides the offset information to the shape and initlializes it, then adds the shape to the objects vector
+     Provides the offset information to the object and initlializes it, then adds the object to the objects vector
     */
     
-    shape.setOffset(currentOffset);
-    shape.generate();
-    currentOffset += shape.getIndxCount();
-    objects.push_back(&shape);
-    totalVertSize += shape.getVertByteSize();
-    totalIndxSize += shape.getIndxByteSize();
-    boundVertices += shape.getIndxByteSize() / sizeof(GLushort);
+    object->setOffset(currentOffset);
+    object->generate();
+    currentOffset += object->getIndxCount();
+    objects.push_back(object);
+    totalVertSize += object->getVertByteSize();
+    totalIndxSize += object->getIndxByteSize();
+    boundVertices += object->getIndxByteSize() / sizeof(GLushort);
 }
 
 void Window::clear()
@@ -70,6 +65,7 @@ void Window::clear()
     totalVertSize = 0;
     totalIndxSize = 0;
     objects.clear();
+    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // Operations for Transparency and Depth
@@ -129,6 +125,14 @@ Window::Window()
     
     // Create and compile our GLSL program from the shaders
     programID = loadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
+    
+    GLuint vertexBufferID;
+    glGenBuffers(1, &vertexBufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+    
+    GLuint indexBufferID;
+    glGenBuffers(1, &indexBufferID);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
 }
 
 GLuint Window::loadShaders(const char * vertex_file_path, const char * fragment_file_path)

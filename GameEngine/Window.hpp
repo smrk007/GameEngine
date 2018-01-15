@@ -25,9 +25,10 @@ public:
         // TODO: I think that OpenGL handles the GLFW window...?
     }
 public:
+    GLFWwindow* getWindow() { return window; }
     void clear();
     void display();
-    void draw(NGon shape);
+    void draw(NGon* shape);
     bool isOpen();
     GLuint loadShaders (const char* vertex_file_path, const char * fragment_file_path);
 };
