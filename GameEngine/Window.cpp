@@ -19,13 +19,13 @@ void Window::display()
     // Binding Individual Objects
     std::size_t vertIt = 0;
     std::size_t indxIt = 0;
-    for (NGon pent : objects)
+    for (NGon* object : objects)
     {
-        glBufferSubData(GL_ARRAY_BUFFER, vertIt, pent.getVertByteSize(), pent.getVertDataPointer());
-        vertIt += pent.getVertByteSize();
+        glBufferSubData(GL_ARRAY_BUFFER, vertIt, object->getVertByteSize(), object->getVertDataPointer());
+        vertIt += object->getVertByteSize();
         
-        glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, indxIt, pent.getIndxByteSize(), pent.getIndxDataPointer());
-        indxIt += pent.getIndxByteSize();
+        glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, indxIt, object->getIndxByteSize(), object->getIndxDataPointer());
+        indxIt += object->getIndxByteSize();
     }
     
     glUseProgram(programID);
@@ -53,7 +53,7 @@ void Window::draw(NGon shape)
     shape.setOffset(currentOffset);
     shape.generate();
     currentOffset += shape.getIndxCount();
-    objects.push_back(shape);
+    objects.push_back(&shape);
     totalVertSize += shape.getVertByteSize();
     totalIndxSize += shape.getIndxByteSize();
     boundVertices += shape.getIndxByteSize() / sizeof(GLushort);

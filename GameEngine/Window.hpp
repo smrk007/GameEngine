@@ -12,7 +12,7 @@ private:
     GLuint VertexArrayID;
     GLuint vertexbuffer;
     
-    std::vector<NGon> objects;
+    std::vector<NGon*> objects;
     
     GLushort currentOffset;
     GLuint boundVertices;
