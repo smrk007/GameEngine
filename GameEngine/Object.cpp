@@ -11,7 +11,8 @@
 void Object::update(GLdouble dt)
 {
     Vec thisPos = pos;
-    Vec newPos = pos.add(vel);
+    std::cout << dt << std::endl;
+    Vec newPos = add(pos, scalarMultiply(vel,dt));
     
     setPos(newPos);
     

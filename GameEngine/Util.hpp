@@ -48,8 +48,16 @@ public:
         y = Y;
         z = Z;
     }
-    
-    Vec add(Vec v) { return Vec(x + v.x, y + v.y, z + v.z); }
 };
+
+// Vector Math
+Vec add (Vec v, Vec u);
+Vec subtract (Vec v, Vec u);
+Vec scalarMultiply (Vec v, GLdouble s);
+Vec scalarDivide (Vec v, GLdouble s);
+GLdouble dotProduct (Vec v, Vec u);
+Vec crossProduct (Vec v, Vec u);
+GLdouble length (Vec v);
+Vec unitVector (Vec v);
 
 #endif /* Util_hpp */

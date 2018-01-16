@@ -1,9 +1,9 @@
-#include "Window.hpp"
-
 #include <iostream>
 
+#include "common.h"
 #include "Engine.hpp"
 #include "Util.hpp"
+#include "Window.hpp"
 
 int main() {
     
@@ -18,10 +18,23 @@ int main() {
     
     Engine world;
     world.addObject(new NGon(20,0.1,Vec(0.5,0.2,0)));
+    
+    clock_t t = clock();
+    clock_t dt;
 
     do {
+        
+        
         world.draw();
-        world.update(1);
+        
+        dt = clock() - t;
+        t = clock();
+        
+        std::cout << dt << std::endl;
+        
+        world.update(dt/1000);
+        
+        
     }
     while (world.isRunning());
 

@@ -64,7 +64,7 @@ void NGon::update(GLdouble dt)
 {
     factorControls();
     
-    setPos(pos.add(vel));
+    setPos(add(pos, scalarMultiply(vel,dt)));
 }
 
 void NGon::factorControls()
