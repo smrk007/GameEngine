@@ -8,7 +8,7 @@
 
 class Engine
 {
-private:
+public:
     Window window;
     std::vector<NGon*> objects; // TODO: Create an Object class
 public:

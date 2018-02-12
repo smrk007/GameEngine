@@ -29,6 +29,8 @@ public:
     }
 };
 
+//////////////////////////////////////////////////
+
 class Vec
 {
 public:
@@ -59,5 +61,14 @@ GLdouble dotProduct (Vec v, Vec u);
 Vec crossProduct (Vec v, Vec u);
 GLdouble length (Vec v);
 Vec unitVector (Vec v);
+double angle (Vec v, Vec u);
+
+//////////////////////////////////////////////////
+
+struct Vertex
+{
+    glm::vec3 position;
+    glm::vec4 color;
+};
 
 #endif /* Util_hpp */

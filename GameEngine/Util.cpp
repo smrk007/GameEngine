@@ -45,3 +45,8 @@ Vec unitVector (Vec v)
     GLdouble L = length(v);
     return Vec(v.x / L, v.y / L, v.z / L);
 }
+
+double angle(Vec v, Vec u)
+{
+    return acos( dotProduct(v,u) / (length(v) * length(u)) );
+}

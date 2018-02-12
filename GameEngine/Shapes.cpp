@@ -6,7 +6,7 @@ void NGon::generate()
     vertSize = (N + 1) * 7;
     indxSize = N * 3;
     
-    verts = new GLfloat[vertSize];
+    verts = new Vertex[vertSize];
     indices = new GLushort[indxSize];
     
     // Initialize the Vertex and Indice arrays
@@ -14,7 +14,7 @@ void NGon::generate()
     generateNIndices(indices, N, offset);
 }
 
-void NGon::generateNVerts(GLfloat* verts, Color color, GLuint N, GLdouble r, Vec pos)
+void NGon::generateNVerts(Vertex* verts, Color color, GLuint N, GLdouble r, Vec pos)
 {
     /*
      Generates an array for the GL_ARRAY_BUFFER binding point
@@ -23,25 +23,26 @@ void NGon::generateNVerts(GLfloat* verts, Color color, GLuint N, GLdouble r, Vec
     const GLdouble RADIANS_PER_SLICE = 6.283185 / N;
     
     // Initializing Center Point
-    verts[0] = pos.x;
-    verts[1] = pos.y;
-    verts[2] = pos.z;
-    verts[3] = color.red;
-    verts[4] = color.green;
-    verts[5] = color.blue;
-    verts[6] = color.alpha;
-    
+    verts[0].position = glm::vec3(pos.x, pos.y, pos.z);
+    verts[0].color = glm::vec4(color.red, color.green, color.blue, color.alpha);
+
     // Initializing Edge Points
     for (int i = 1; i <= N; i++)
     {
-        verts[i*7+0] = pos.x + sin(RADIANS_PER_SLICE * i) * r; // X
-        verts[i*7+1] = pos.y + cos(RADIANS_PER_SLICE * i) * r; // Y
-        verts[i*7+2] = pos.z;                                  // Z
-        
-        verts[i*7+3] = color.red;                              // R
-        verts[i*7+4] = color.green;                            // G
-        verts[i*7+5] = color.blue;                             // B
-        verts[i*7+6] = color.alpha;                            // A
+        verts[i].position = glm::vec3(pos.x + sin(RADIANS_PER_SLICE * i) * r,
+                                      pos.y + cos(RADIANS_PER_SLICE * i) * r,
+                                      pos.z);
+        // Performing Rotation
+        // Part 1: Finding Angle of Rotation
+        double thisAngle = angle(Vec(0,0,-1), Vec(facing.x,0,facing.z));
+        // Part 2: Performing Rotation Based on Angle
+        verts[i].position.x = cos(thisAngle)*verts[i].position.x - sin(thisAngle)*verts[i].position.z;
+        verts[i].position.z = cos(thisAngle)*verts[i].position.z + sin(thisAngle)*verts[i].position.x;
+       
+        verts[i].color.r = color.red;                              // R
+        verts[i].color.g = color.green;                            // G
+        verts[i].color.b = color.blue;                             // B
+        verts[i].color.a = color.alpha;                            // A
     }
 }
 
